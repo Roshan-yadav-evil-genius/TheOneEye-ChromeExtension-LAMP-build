@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "name": "Lamp",
+  "version": "0.0.1",
+  "description": "Lamp(LinkedIn Amplifier) Product of TheOneEye",
+  "action": {
+    "default_title": "Lamp",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "serviceWorker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "TheOneEyeSymbol.png",
+    "48": "TheOneEyeSymbol.png",
+    "128": "TheOneEyeSymbol.png"
+  }
+}
